@@ -1,0 +1,36 @@
+<!--program on document spacing using css-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document spacing using css</title>
+        <style>
+            /*spcing between elements*/
+            .para1
+            {
+                text-indent:3em; /*move text to the right from the margin*/
+                margin-top:50px; /* space above the element*/
+                margin-bottom:50px; /* space below the element*/
+                margin-left:30px;
+                line-height:3px; /*line spacing*/
+            } 
+            /*spacing inside elements*/ 
+            .para2
+            {
+               padding:25px; /* Adds space inside the element */
+               background-color: darkcyan;
+            }
+            /*text spacing elements*/
+            .para3
+            {
+                letter-spacing:7px; /*adds space between the letters*/
+                word-spacing:15px; /*adds space between the words*/
+            }
+        </style>
+    </head>
+    <body>
+        <p class="para1">this text get space in the document by using the property in the css</p>
+        <p class="para1">This text will show the effect of line height element</p>
+        <p class="para2">this is to test margin bottom style</p>
+        <p class="para3">this text shows the effect of text spacing attributes</p>
+    </body>
+</html>
