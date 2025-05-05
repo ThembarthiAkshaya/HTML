@@ -1,0 +1,57 @@
+<!--html program on row span and column span
+Question:
+Create an HTML table that represents the following data layout for a weekly schedule:
+Day	Time Slot	Activity
+Monday	9am - 10am	Yoga
+10am - 11am	Meditation
+Tuesday	9am - 11am	Workshop
+Wednesday	9am - 10am	Gym
+10am - 11am	Reading Club
+📝 Requirements:
+Use rowspan to merge the "Monday" and "Wednesday" rows correctly where the day appears only once for multiple time slots.
+Use colspan to make the "Workshop" activity span across both time slots on Tuesday.
+Style the table with simple borders using CSS.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rowsapn and colspan</title>
+        <style>
+            table,th,td{
+                border:1px solid black;
+                border-collapse:collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>TimeSlot</th>
+                <th>Activity</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td>9am-10am</td>
+                <td>Yoga</td>
+            </tr>
+            <tr>
+                <td>10am-11am</td>
+                <td>Meditation</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+               <td colspan="2">Workshop</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Wednesday</td>
+                <td>10am-11pm</td>
+                <td>Gym</td>
+            </tr>
+            <tr>
+                <td>11pm-12pm</td>
+                <td>Reading Club</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!--task:
+Create an HTML table with the following specifications:
+The table should have 3 columns: "Name", "Subject", "Score".
+Add 2 rows of sample data below the header.
+Apply CSS to:
+Set cell padding:
+Top: 10px
+Bottom: 20px
+Left: 30px
+Right: 40px
+Set cell spacing to 25px.
+Use CSS only (no inline HTML attributes like cellpadding or cellspacing).-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>padding and spacing</title>
+        <style>
+           table,th,td{
+                border:1px solid black;
+            }
+            th,td{
+                padding-top: 10px;
+                padding-bottom:20px;
+                padding-left:30px;
+                padding-right:40px;
+            }
+            table{
+                border-spacing:25px;
+            }
+        </style>
+    </head>
+    <body>
+       <table>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>Vineela</td>
+            <td>Maths</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>Shruthi</td>
+            <td>Social</td>
+            <td>87</td>
+        </tr>
+       </table>
+    </body>
+</html>
