@@ -1,0 +1,34 @@
+<!--Task:Create an HTML page for a fictional article titled "The History of Computers". The page should include the following:
+A list of four chapters at the top, each linking to its corresponding section using bookmarks:
+Chapter 1: Introduction
+Chapter 2: Early Computers
+Chapter 3: The PC Revolution
+Chapter 4: Modern Computing
+Each chapter should be represented by an <h2> heading with a unique id to act as a bookmark.
+Add enough placeholder text (e.g., using <p>Lorem ipsum...</p>) between chapters so scrolling is necessary.
+Add a "Back to Top" link at the end of each chapter that scrolls back to the top of the page.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookmark in html</title>
+    </head>
+    <body>
+        <h1 id="back" style="text-align:center;">The History of Computers</h1>
+        <a href="#c1">Jump to chapter 1</a><br>
+        <a href="#c2">Jump to chapter2</a><br>
+        <a href="#c3">Jump to chapter3</a><br>
+        <a href="#c4">Jump to chapter4</a><br>
+        <h2 id="c1">Chapter1</h2>
+        <p>This chapter explains introduction </p>
+        <a href="#back">Back to Top</a><br>
+        <h2 id="c2">Chapter2</h2>
+        <p>This Chapter Explains Early Computers</p>
+        <a href="#back">Back to Top</a>
+        <h2 id="c3">Chapter3</h2>
+        <p>This Chapter Explains Revolution of PC's</p>
+        <a href="#back">Back to Top</a><br>
+        <h2 id="c4">Chapter4</h2>
+        <p>This Chapter Explains About Modern Computers</p>
+        <a href="#back">Back to Top</a><br>
+    </body>
+</html>
