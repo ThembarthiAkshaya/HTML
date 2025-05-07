@@ -1,0 +1,45 @@
+<!--Create an HTML page with three links:
+A link to https://www.google.com
+A link to a local file named contact.html
+A link to https://www.wikipedia.org
+Apply the following styles using CSS:
+Unvisited links should be dark green and not underlined.
+Visited links should be gray and italic.
+On hover, links should turn blue, be underlined, and have a light yellow background.
+When active (clicked), links should turn orange and be bold.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>link colors</title>
+        <style>
+            a:link{
+                color:green;
+                text-decoration: none;
+                background-color:transparent;
+            }
+            a:visited{
+                color:grey;
+                font-style:italic;
+                text-decoration:none;
+                background-color:transparent;
+            }
+            a:hover{
+                color:blue;
+                text-decoration:underline;
+                background-color:yellow;
+            }
+            a:active{
+                color:orange;
+                text-decoration:none;
+                font-weight:bold;
+                background-color:transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://www.google.com">GOOGLE</a><br><br>
+        <a href="styled-html-table.html">Local file</a><br><br>
+        <a href="https://www.wikipedia.org">Wikipedia</a>
+    </body>
+</html>
