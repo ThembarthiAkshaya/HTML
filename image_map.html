@@ -1,0 +1,24 @@
+<!--Create an HTML page titled "Campus Map" that displays an image of a campus layout (campus.jpg).
+ Make at least three clickable areas on the image:
+A rectangle that links to "library.html" and represents the Library area of the campus.
+A circle that links to "canteen.html" and represents the Canteen.
+A polygon that links to "sports.html" and represents the Sports Ground.
+Each area should have:
+A proper alt description (e.g., "Library", "Canteen", etc.)
+Correct shape and coords values.
+A <map> element linked to the image using usemap.
+Use placeholder coordinates (you can guess them) if you don’t have a real image.
+Add target="_blank" to all <area> tags to open the links in a new tab.-->
+<html>
+    <head>
+        <title>Campus Map</title>
+    </head>
+    <body>
+        <img src="campus.PNG" usemap="#campusmap">
+        <map name="campusmap">
+            <area shape="rect" coords="165,95,280,210" href="library.html" alt="Library" target="_blank">
+            <area shape="circle" coords="390,190,45" href="canteen.html" alt="Canteen" target="_blank">
+            <area shape="poly" coords="50,230, 160,230, 185,330, 70,330" href="sports.html" alt="Sports" target="_blank">
+        </map>
+    </body>
+</html>
