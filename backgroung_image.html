@@ -1,0 +1,42 @@
+<!--Create a simple HTML page with the following specifications:
+Set a background image on the entire page using the <body> selector.
+The background image should:
+Not repeat.
+Be fixed when scrolling.
+Cover the entire browser window without stretching or distortion.
+Add a <p> element in the body with its own background image that:
+Stretches to completely fill the paragraph area, even if it distorts the image.
+Does not repeat.
+Requirements Recap:
+Background on <body>:
+Use cover, no-repeat, and fixed.
+Background on <p>:
+Use 100% 100%, no-repeat.
+-->
+<html>
+    <head>
+        <title>Background Image</title>
+    <style>
+        body
+        {
+            background-image: url('sports.jpg');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+        p 
+        {
+          width: 80%;
+          margin: 20px auto;
+          padding: 20px;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-image: url('library.jpg');
+          color: white; /* Optional for readability depending on background */
+        }
+    </style>
+    </head>
+    <body>
+    <p>A library is a collection of books, and possibly other materials and media, that is accessible for use by its members and members of allied institutions. Libraries provide physical (hard copies) or digital (soft copies) materials, and may be a physical location, a virtual space, or both. A library's collection normally includes printed materials which may be borrowed, and usually also includes a reference section of publications which may only be utilized inside the premises. Resources such as commercial releases of films, television programmes, other video recordings, radio, music and audio recordings may be available in many formats. These include DVDs, Blu-rays, CDs, cassettes, or other applicable formats such as microform</p>
+    </body>
+</html>
