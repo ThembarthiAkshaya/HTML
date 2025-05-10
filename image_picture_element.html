@@ -1,0 +1,34 @@
+<!--You are building a responsive website that displays different images based on screen size.
+Write the HTML code using the <picture> element to display the following:
+Show img_large.jpg when the screen width is 800px or more
+Show img_medium.jpg when the screen width is between 500px and 799px
+Show img_small.jpg for screen widths less than 500px or for browsers that do not support the <picture> element
+Make sure your solution:
+Uses the correct order of <source> tags
+Includes a fallback <img> tag
+Explains briefly in a comment why the <img> tag is placed at the end
+-->
+<!Doctype html>
+<html>
+    <head>
+        <title>Picture element of image tag usage</title>
+        <style>
+            body{
+                background-size:cover;
+                background-attachment: fixed;
+            }
+            h1{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Picture Element Usage</h1>
+        <picture>
+           <source media="(min-width: 800px)" srcset="img_large.jpg">
+           <source media="(min-width: 500px) and (max-width: 799px)" srcset="img_medium.jpg">
+           <!-- Fallback for smaller screens or unsupported browsers -->
+           <img src="img_small.jpg" alt="Responsive image">
+        </picture>
+    </body>
+</html>
