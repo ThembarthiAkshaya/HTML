@@ -1,0 +1,23 @@
+<!--Create an HTML page using <frameset> that divides the browser window into three sections:
+A top horizontal frame that takes up 20% of the window height and loads a file named header.html.
+The remaining 80% of the window should be divided vertically into two columns:
+The left column should take up 30% of the width and load menu.html.
+The right column should take up 70% of the width and load content.html.
+Additional Requirements:
+Set a border of 2 pixels between frames.
+Ensure scrollbars are disabled in the menu.html frame.
+Make the menu.html frame not resizable.
+Name each frame appropriately (header, menu, main) for potential future use in hyperlink targeting.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frames in HTML</title>
+</head>
+<frameset rows="20%,80%" border="2">
+    <frame src="header.html" name="header">
+    <frameset cols="30%,70%">
+        <frame src="menu.html" name="menu" scrolling="no" noresize>
+        <frame src="content.html" name="main">
+    </frameset>
+</frameset>
+</html>
