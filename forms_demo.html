@@ -1,0 +1,49 @@
+<!--Create an HTML registration form with the following requirements:
+📝 Form Fields
+First Name – Text input (required)
+Last Name – Text input (required)
+Gender – Radio buttons: Male, Female, Other (only one can be selected)
+Hobbies – Checkboxes: Reading, Travelling, Gaming (can select multiple)
+Submit – Submit button to send the form
+📌 Technical Requirements
+Use appropriate <label> elements with the for attribute.
+Use the name attribute for all input fields (important for form submission).
+Use <form> and <input> tags properly.
+Set the form’s action attribute to "register.php" (this simulates sending data to the server).
+Optional: Pre-fill any input field with a default value using the value attribute.
+✅ Bonus Challenge
+Add the required attribute to the First Name and Last Name fields to ensure they must be filled out before submission.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Forms</title>
+</head>
+
+<body style="background-color:palevioletred;">
+    <h1 style="text-align: center;">Registration form</h1>
+    <form action="/register.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" required placeholder="Enter your first name"><br><br>
+        <label for="lanme">Last Name</label>
+        <input type="text" id="lname" name="lname" required placeholder="Enter your last name"><br><br>
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="Gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="Gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="Gender" value="Other">
+        <label for="other">Other</label><br><br>
+        <label for="Hobbies">Hobbies:</label><br>
+        <input type="checkbox" id="reading" name="Hobbies" value="Reading">
+        <label for="reading">Reading</label><br>
+        <input type="checkbox" id="travelling" name="Hobbies" value="Travelling">
+        <label for="travelling">Travelling</label><br>
+        <input type="checkbox" id="gaming" name="Hobbies" value="Gaming">
+        <label for="gaming">Gaming</label><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

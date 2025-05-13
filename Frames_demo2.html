@@ -1,0 +1,28 @@
+<!--Create an HTML page using <frameset> and <frame> tags to display a layout that meets the following specifications:
+The browser window should be divided vertically into two columns:
+The left column should take up 30% of the window width.
+The right column should take up 70% of the window width.
+The right column should be further divided horizontally into two rows:
+The top row should take up 50% of the height.
+The bottom row should take up the remaining 50%.
+Load the following HTML pages into the frames:
+menu.html in the left column.
+header.html in the top right row.
+content.html in the bottom right row.
+Make sure:
+Frames cannot be resized.
+No scrollbars are shown.
+Frame borders are visible.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Frames in html</title>
+    </head>
+    <frameset cols="30%,70%">
+        <frame src="menu.html" frameborder="1" scrolling="no" noresize>
+        <frameset rows="50%,50%">
+            <frame src="header.html" frameborder="1" scrolling="no" noresize>
+            <frame src="content.html" frameborder="1" scrolling="no" noresize>
+        </frameset>
+    </frameset>
+</html>
