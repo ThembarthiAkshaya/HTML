@@ -1,0 +1,45 @@
+<!--
+Create a form in HTML that allows users to submit feedback about a car they recently drove. Your form should include the following elements:
+A text input for the user's name.
+A drop-down list to select a car brand (Volvo, Saab, Fiat, Audi), where "Fiat" is selected by default.
+A multi-select drop-down to choose features liked (e.g., Comfort, Mileage, Design, Performance). Allow users to select multiple features.
+A textarea for additional comments.
+A button that shows an alert saying "Feedback submitted!" when clicked (you may use inline JavaScript for the alert).
+Use <label> elements appropriately for accessibility.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form elements</title>
+    <link rel="stylesheet" href="form-elements.css">
+</head>
+
+<body>
+    <form target="_blank" autocomplete="on" class="form-background" action="#">
+        <h1>Feedback Form of Car</h1>
+        <p>Dear customer,this is the feedback form about a car you recently drove</p><hr/>
+        <label for="fname" class="required">User name:</label><br>
+        <input type="text" id="fname" name="fname" required><br><hr/>
+        <label for="brand">Brand:</label><br>
+        <select id="brand" name="brand">
+            <option value="Volvo">Volvo</option>
+            <option value="Saab">Saab</option>
+            <option value="Fiat" selected>Fiat</option>
+            <option value="Audi">Audi</option>
+        </select><hr/>
+        <label for="features">Features liked:</label><br>
+        <select id="features" name="features" multiple>
+            <option value="Comfort">Comfort</option>
+            <option value="Mileage">Mileage</option>
+            <option value="Design">Design</option>
+            <option value="Performance">Performance</option>
+        </select><hr/>
+        <label for="comments">Additional Comments:</label></br>
+        <textarea rows="20" cols="70" id="comments" placeholder="write your comments here......." name="comments"></textarea></br>
+        <hr/>
+        <button type="submit" onclick="alert('Feedback submitted!')">Submit</button>
+    </form>
+</body>
+
+</html>

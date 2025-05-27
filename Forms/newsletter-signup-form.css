@@ -1,0 +1,27 @@
+body {
+            background-color: purple;
+        }
+
+        div {
+            background-color: white;
+            color: black;
+            margin: 15px;
+            padding: 15px;
+            border-top: 1px solid #000;
+        }
+
+        button
+        {
+            background-color:purple;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            /*justify-content: center;*/
+            margin-top: 10px;
+            border-width:0px;
+        }
+
+        .required::after {
+            content: " *";
+            color: rgb(172, 12, 12);
+        }

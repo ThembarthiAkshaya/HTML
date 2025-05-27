@@ -1,0 +1,72 @@
+<!--Build an HTML form that collects the following user details:
+Full Name (Use text input)
+Email Address (Use email input)
+Password (Use password input)
+Confirm Password (Use password input)
+Phone Number (Use tel with a pattern like 123-456-7890)
+Date of Birth (Use date)
+Favorite Color (Use color)
+Upload Profile Picture (Use file)
+Choose Gender (Use radio inputs)
+Hobbies (Use at least 2 checkbox inputs)
+Country of Residence (Use search or text)
+Rating (1 to 5) (Use range)
+Terms and Conditions Agreement (Use a checkbox)l
+Submit and Reset buttons
+-->
+<!Doctype html>
+<html>
+    <head>
+        <title>Input types</title>
+        <style>
+            form{
+                background-color:violet;
+                padding:20px;
+                color:white;
+                font-family:"Bree Serif";
+            }
+            .required::after{
+               content:" *";
+               color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" target="_blank" autocomplete="on">
+            <label for="fname" class="required">Full name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="enter your name" required><br><br>
+            <label for="email" class="required">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="enter your email" required><br><br>
+            <label for="pwd" class="required">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" required><br><br>
+            <label for="confirm_pwd" class="required">Confirm Password:</label><br>
+            <input type="password" id="confirm_pwd" name="confirm password" required><br><br>
+            <label for="phone_number" class="required">Phone number:</label><br>
+            <input type="tel" id="phone_number" name="phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="123-456-7890" required><br><br>
+            <label for="dateOfBirth">Date of birth:</label><br>
+            <input type="date" id="dateOfBirth" name="DOB"><br><br>
+            <label for="favourite_color">Choose Your Favourite Color:</label>
+            <input id="favourite_color" type="color" name="favourite_color"><br><br>
+            <label for="profie">Upload profile:</label><br>
+            <input type="file" id="profile" name="profile" required><br><br>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="gender1" name="gender" value="female">
+            <label for="gender1">Female</label><br>
+            <input type="radio" id="gender2" name="gender" value="male">
+            <label for="gender2">Male</label><br><br>
+            <label for="gender">Hobbies:</label><br>
+            <input type="checkbox" id="hobbies1" name="hobby" value="Chess">
+            <label for="hobbies1">Chess</label><br>
+            <input type="checkbox" id="hobbies2" name="hobby" value="Football">
+            <label for="hobbies2">Football</label><br><br>
+            <label for="country">Country of Residence:</label><br>
+            <input type="search" id="country" name="country"><br><br>
+            <label for="rating">Rating:</label><br>
+            <input type="range" id="rating" min="1" max="5" name="rating"><br><br>
+            <label for="terms">Terms And Conditions:</label><br>
+            <input type="checkbox" id="terms" name="terms">Acepting terms and conditions<br><br>
+            <input type="reset" value="Reset"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

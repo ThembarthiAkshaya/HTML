@@ -1,0 +1,47 @@
+<!--Use a <fieldset> to group the personal information section.
+Include fields for Full Name, Email Address, and Phone Number.
+Add a <legend> titled "Personal Information".
+Add another <fieldset> titled "Job Preferences" using a <legend>.
+Include an input field for Preferred Job Role, and use a <datalist> to provide the following predefined options:
+Frontend Developer
+Backend Developer
+Full Stack Developer
+Data Scientist
+DevOps Engineer
+Include a submit button at the bottom of the form.
+✅ Requirements:
+Use appropriate label elements with for attributes.
+Ensure the input field for job role correctly references the datalist.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Job Application Form</title>
+    </head>
+    <body>
+      <form action="#" method="POST">
+        <fieldset>
+            <legend>Personal Information:</legend>
+            <label for="fname">Name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter your full name"><br>
+            <label for="email_address">Email Address</label><br>
+            <input type="email" id="email_address" name="email" placeholder="Enter your email address"><br>
+            <label for="phno">Phone number:</label><br>
+            <input type="tel" id="phno" name="phno">
+        </fieldset>
+        <fieldset>
+            <legend>Job Preferences:</legend>
+            <label>Preferred roles:</label>
+            <input list="Preferred_Job_Role">
+            <datalist id="Preferred_Job_Role">
+                <option value="Frontend Developer">
+                <option value="Backend Developer">
+                <option value="Full Stack Developer">
+                <option value="Data Scientist">
+                <option value="DevOps Engineer">
+            </datalist>
+        </fieldset>
+        <input type="submit">
+      </form>
+    </body>
+</html>

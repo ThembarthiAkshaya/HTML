@@ -1,0 +1,25 @@
+body {
+    background-color: blueviolet;
+    padding: 10px;
+    height: 100vh;
+}
+
+.form-background {
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    margin: 10px;
+    padding: 20px;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+.margin {
+    margin: 10px;
+}
+hr{
+border:1px solid black;
+}

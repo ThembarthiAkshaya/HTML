@@ -1,0 +1,75 @@
+<!--Create an HTML form for registering users to a tech event. The form should include the following input fields and apply at least 10 different attributes you’ve learned from the list above.
+✅ Requirements:
+First Name: Text input
+Autofocus,Required,Maxlength = 20,Placeholder = "e.g., John"
+Last Name: Text input
+Required,Maxlength = 20
+Email: Email input
+Required,Autocomplete off,Placeholder = "e.g., john@example.com"
+Date of Birth: Date input
+User must be born before 2006-01-01,Use the max attribute
+PIN Code: Number input
+Must be 4 digits,Use pattern, maxlength, and placeholder
+Resume Upload: File input
+Only PDF allowed,Use accept,Required
+Programming Languages: Use <input list> with predefined options (e.g., Python, Java, C++, JavaScript)
+Skill Rating: Number input from 1 to 10
+Use min, max, and step=1
+T-shirt Size: Use a readonly field with a default value M
+Submit: Use <input type="image"> with specified height and width
+✍️ Bonus Challenge:
+Make the Resume Upload accept multiple files.
+Use a disabled field that says "Admin Use Only".
+Set the form’s autocomplete="on" but disable it for the email field.
+-->
+<!Doctype html>
+<html>
+
+<head>
+    <title>event-registration-fomr</title>
+    <style>
+        .required::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" autocomplete="on">
+        <fieldset>
+            <legend>Personal info:</legend>
+            <label for="fname" class="required">First Name:</label>
+            <input id="fname" type="text" maxlength="20" placeholder="Joe" name="fname" autofocus required><br><br>
+            <label for="lname" class="required">Last Name:</label>
+            <input id="lname" type="text" maxlength="20" name="lname" required><br><br>
+            <label for="admin">Admin:</label>
+            <input id="admin" type="text" name="admin" placeholder="admin use only" disabled><br><br>
+            <label for="email" class="required">Email:</label>
+            <input id="email" type="email" name="email" autocomplete="off" placeholder="john@example.com"
+                required><br><br>
+            <label for="dob">Date Of Birth:</label><br>
+            <input id="dob" name="dob" type="date" max="2006-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+                placeholder="2000-01-01" required>
+        </fieldset><br>
+        <label for="pin" class="required">PIN:</label>
+        <input type="text" id="pin" max="4" maxlength="4" placeholder="4031" pattern="[0-9]{4}" required><br><br>
+        <label for="resume" class="required">Upload Resume:</label>
+        <input id="resume" type="file" accept=".pdf" multiple required><br><br>
+        <label for="Languages">Programming Languages:</label><br>
+        <input id="Languages" list="Planguages" name="Languages">
+        <datalist id="Planguages">
+            <option value="Python"></option>
+            <option value="Java"></option>
+            <option value="C++"></option>
+            <option value="JavaScript"></option>
+        </datalist><br><br>
+        <label for="rating">Skills Rating:</label>
+        <input type="number" min="0" max="10" step="1" id="rating" name="rating"><br><br>
+        <label for="t-shirt">T-shirt Size:</label>
+        <input id="t-shirt" name="t-shirt" type="text" value="M" readonly><br><br>
+        <input type="image" src="submit.jpg" height="30" width="50" alt="submit-image">
+    </form>
+</body>
+
+</html>
