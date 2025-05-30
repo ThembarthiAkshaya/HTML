@@ -1,0 +1,95 @@
+<!--Requirements:
+You must have three draggable shapes:
+Circle
+Square
+Triangle
+Each must be:
+A visually distinct shape using CSS.
+Draggable with a unique id and a data-shape attribute.
+You must have three drop zones:
+"Circle Zone"
+"Square Zone"
+"Triangle Zone"
+Each should:
+Allow dropping.
+Accept only the correct shape (based on data-accept attribute).
+Show feedback ("Correct!" in green or "Try again!" in red) when a shape is dropped.
+You must use the following Drag and Drop API events/functions:
+ondragstart with setData()
+ondragover with preventDefault()
+ondrop with getData(), checking correctness, and using appendChild().
+📌 Bonus (Optional):
+Use CSS to make the shapes look like actual geometric figures.
+Prevent a shape from being dropped more than once (disable dragging after a correct drop).-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drop and Drag in HTML</title>
+    <link rel="stylesheet" href="drop_drag_quiz1.css">
+</head>
+
+<body>
+    <h1>Drag and Drop the shapes in the boxes</h1>
+    <div class="container">
+        <div>
+            <div id="circle" class="shape circle" draggable="true" data-shape="circle"
+                ondragstart="dragstartHandler(event)"></div>
+            <div id="rectangle" class="shape square" draggable="true" data-shape="square"
+                ondragstart="dragstartHandler(event)"></div>
+            <div id="triangle" class="shape triangle" draggable="true" data-shape="triangle"
+                ondragstart="dragstartHandler(event)"></div>
+        </div>
+
+        <div class="container-box">
+            <p>Circle Zone</p>
+            <div id="circle-zone" class="drop-zone" data-accept="circle" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)"></div>
+        </div>
+        <div class="container-box">
+            <p>Square Zone</p>
+            <div id="square-zone" class="drop-zone" data-accept="square" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)"></div>
+        </div>
+        <div class="container-box">
+            <p>Triangle Zone</p>
+            <div id="triangle-zone" class="drop-zone" data-accept="triangle" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)"></div>
+        </div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+    
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id)
+        }
+
+        function dragoverHandler(ev) {
+            ev.preventDefault();
+        }
+
+        function dropHandler(ev) {
+            ev.preventDefault();
+
+            const draggedId = ev.dataTransfer.getData("text");
+            const draggedElement = document.getElementById(draggedId);
+            const draggedShape = draggedElement.dataset.shape;
+            const expectedShape = ev.currentTarget.dataset.accept;
+            const feedback = document.getElementById('feedback');
+
+            if (draggedShape === expectedShape) {
+                ev.currentTarget.appendChild(draggedElement);
+                feedback.textContent = "correct";
+                feedback.style.color = "green";
+            }
+            else {
+                feedback.textContent = "try again!";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>

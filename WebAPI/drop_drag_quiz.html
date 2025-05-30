@@ -1,0 +1,114 @@
+<!--Requirements:
+You must have at least 3 countries (draggable items):
+India
+Germany
+Brazil
+You must have 3 drop zones labeled:
+Asia
+Europe
+South America
+Each country should be draggable and should have an id.
+Each drop zone should allow dropping and must handle the drop event correctly.
+When a country is dropped into a continent:
+The country element should be appended into that drop zone.
+Optionally, you can show a message (e.g., “Correct!” or “Try again!”) based on whether it was placed correctly.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop - Country Matching</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 10px;
+        }
+
+        .country-box {
+            text-align: center;
+        }
+
+        .drop-zone {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #aaa;
+            padding: 5px;
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Drag the country to the correct continent</h3>
+
+    <div class="container">
+        <!-- Draggable Countries -->
+        <div>
+            <p id="india" draggable="true" data-country="India" ondragstart="dragstartHandler(event)">India</p>
+            <p id="germany" draggable="true" data-country="Germany" ondragstart="dragstartHandler(event)">Germany</p>
+            <p id="brazil" draggable="true" data-country="Brazil" ondragstart="dragstartHandler(event)">Brazil</p>
+        </div>
+
+        <!-- Drop Zones -->
+        <div class="country-box">
+            <p>Asia</p>
+            <div id="asia" class="drop-zone" data-accept="India" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)">
+            </div>
+        </div>
+
+        <div class="country-box">
+            <p>Europe</p>
+            <div id="europe" class="drop-zone" data-accept="Germany" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)">
+            </div>
+        </div>
+
+        <div class="country-box">
+            <p>South America</p>
+            <div id="south-america" class="drop-zone" data-accept="Brazil" ondragover="dragoverHandler(event)"
+                ondrop="dropHandler(event)">
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dragoverHandler(ev) {
+            ev.preventDefault(); // Necessary to allow drop
+        }
+
+        function dropHandler(ev) {
+            ev.preventDefault();
+
+            const draggedId = ev.dataTransfer.getData("text");
+            const draggedElement = document.getElementById(draggedId);
+            const draggedCountry = draggedElement.dataset.country;
+            const expectedCountry = ev.currentTarget.dataset.accept;
+            const feedback = document.getElementById('feedback');
+
+            if (draggedCountry === expectedCountry) {
+                ev.currentTarget.appendChild(draggedElement);
+                feedback.textContent = "Correct!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Try again!";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Testing Browsers Support</h1>
+<div id="result"></div>
+<script>
+    const x=document.getElementById("result");
+    if(typeof(Storage)!=="undefined"){
+        x.innerHTML="your browser supports web browser";
+    }
+    else{
+        x.innerHTML="Your browser doesnot support web browser";
+    }
+</script>
+</body>
+</html>
+

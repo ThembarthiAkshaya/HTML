@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    gap: 40px;
+    margin-bottom:10px;
+}
+.circle{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    background-color:#fad27d;
+    margin-bottom: 10px;
+}
+.square{
+    height:50px;
+    width:50px;
+    background-color:#0af5f1;
+    margin-bottom: 10px;
+}
+.triangle{
+    height:0px;
+    width:0px;
+    border-left:30px solid transparent;
+    border-right:30px solid transparent;
+    border-bottom: 60px solid #2ecc71;
+    margin-bottom: 10px;
+}
+.container-box{
+    text-align: center;
+}
+.drop-zone{
+    border:1px solid black;
+    height:100px;
+    width:300px;
+    display: flex;              /* Enables flex layout */
+    align-items: center;        /* Vertically center */
+    justify-content: center;
+}
